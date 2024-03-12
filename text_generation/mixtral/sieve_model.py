@@ -76,7 +76,7 @@ class Model:
         <|im_start|>assistant
         """
 
-        sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=16384)
+        sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=16384, )
 
         start = time.time()
         outputs = self.llm.generate(prompt_template, sampling_params=sampling_params)
