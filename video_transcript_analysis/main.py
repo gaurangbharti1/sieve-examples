@@ -28,12 +28,12 @@ metadata = sieve.Metadata(
 )
 def analyze_transcript(
     file: sieve.File,
+    generate_chapters: bool = True,
+    generate_highlights: bool = False,
     max_summary_length: int = 5,
     max_title_length: int = 10,
     num_tags: int = 5,
-    generate_chapters: bool = True,
     denoise_audio: bool = True,
-    generate_highlights: bool = True,
     highlight_search_phrases : str = "Most likely to go viral, funniest",
     max_highlight_duration: int = 30,
 ):
@@ -46,7 +46,7 @@ def analyze_transcript(
     :param denoise_audio: Whether to denoise audio before analysis. Results in better transcription but slower processing. Defaults to True.
     :param generate_highlights: Whether to generate highlights or not. Defaults to False.
     :param highlight_search_phrases: Topic(s) of highlights to generate, can be multiple comma-separated phrases. Can be anything from "Most likely to go viral" to "Technology". Defaults to "Most likely to go viral, funniest".
-    :param max_highlight_duration: Maximum duration of each highlight in seconds. Defaults to 30, set to -1 to disable highlights.
+    :param max_highlight_duration: Maximum duration of each highlight in seconds.
     '''
     print("converting to audio")
     # video to audio
